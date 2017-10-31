@@ -35,3 +35,11 @@ export function goToPage(pageNumber) {
         pageNumber,
     }
 }
+
+export function setGender(id, gender) {
+    return {
+        type: types.SET_GENDER,
+        id,
+        gender
+    }
+}

@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 import {
     addFriend, deleteFriend, starFriend,
-    updateTotalPages, goToPage
+    updateTotalPages, goToPage, setGender
 } from '../actions/FriendsActions';
 import {FriendList, AddFriendInput} from '../components';
 import {Pagination} from "../components/index";
@@ -41,6 +41,7 @@ class FriendListApp extends Component {
             deleteFriend: this.props.deleteFriend,
             starFriend: this.props.starFriend,
             goToPage: this.props.goToPage,
+            setGender: this.props.setGender
         };
 
         return (
@@ -67,5 +68,6 @@ export default connect(mapStateToProps, {
     deleteFriend,
     starFriend,
     updateTotalPages,
-    goToPage
+    goToPage,
+    setGender
 })(FriendListApp)

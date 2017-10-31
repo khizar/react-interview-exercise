@@ -1,21 +1,25 @@
 import * as types from '../constants/ActionTypes';
+import {GENDER_NONE} from "../constants/MiscelleneousConstants";
 
 const initialState = {
     friendsById: [
         {
             id: 0,
             name: 'Theodore Roosevelt',
-            starred: true
+            starred: true,
+            gender: GENDER_NONE
         },
         {
             id: 1,
             name: 'Abraham Lincoln',
-            starred: false
+            starred: false,
+            gender: GENDER_NONE
         },
         {
             id: 2,
             name: 'George Washington',
-            starred: false
+            starred: false,
+            gender: GENDER_NONE
         }
     ],
     currentPageNumber: 1,
@@ -61,6 +65,16 @@ export default function friends(state = initialState, action) {
             return {
                 ...state,
                 currentPageNumber: action.pageNumber
+            };
+        case types.SET_GENDER:
+            return {
+                ...state,
+                friendsById: state.friendsById.map((friend) => {
+                    if (friend.id === action.id) {
+                        friend.gender = action.gender;
+                    }
+                    return friend;
+                })
             };
 
         default:
