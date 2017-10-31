@@ -4,14 +4,14 @@ import styles from './Pagination.css';
 
 class Pagination extends Component {
 
-    handleNextPageClick = () => {
-        if(this.props.pageNumber < this.props.totalPages){
+    handleNextPageClick() {
+        if (this.props.pageNumber < this.props.totalPages) {
             this.props.goToPage(this.props.pageNumber + 1);
         }
     }
 
-    handlePrevPageClick = () => {
-        if(this.props.pageNumber > 1) {
+    handlePrevPageClick() {
+        if (this.props.pageNumber > 1) {
             this.props.goToPage(this.props.pageNumber - 1);
         }
     }
@@ -20,15 +20,15 @@ class Pagination extends Component {
     render() {
         const {pageNumber, totalPages} = this.props;
         const isFirstPage = pageNumber < 2;
-        const isLastPage =  pageNumber === totalPages;
+        const isLastPage = pageNumber === totalPages;
 
         return (
             <section className={styles.pagination}>
                 <a
-                    className={classnames(styles.arrow, {
+                    className={classnames('js-prevButton', styles.arrow, {
                         [styles.disabled]: totalPages < 2 || isFirstPage
                     })}
-                    onClick={this.handlePrevPageClick}
+                    onClick={this.handlePrevPageClick.bind(this)}
                 >
                     &lt;
                 </a>
@@ -36,10 +36,10 @@ class Pagination extends Component {
                     <small>{pageNumber}</small>
                 </label>
                 <a
-                    className={classnames(styles.arrow, {
+                    className={classnames('js-nextButton', styles.arrow, {
                         [styles.disabled]: totalPages < 2 || isLastPage
                     })}
-                    onClick={this.handleNextPageClick}
+                    onClick={this.handleNextPageClick.bind(this)}
                 >
                     &gt;
                 </a>
@@ -49,7 +49,7 @@ class Pagination extends Component {
 }
 
 Pagination.PropTypes = {
-    pageNumber: 0,
+    pageNumber: 1,
     totalPages: 1,
 }
 

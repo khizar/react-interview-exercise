@@ -5,7 +5,7 @@ import {GENDER_FEMALE, GENDER_MALE, GENDER_NONE} from "../constants/Miscelleneou
 
 class FriendListItem extends Component {
 
-    onGenderChangeHandler = (event) => {
+    onGenderChangeHandler(event) {
         this.props.setGender(this.props.id, event.target.value);
     };
 
@@ -23,8 +23,8 @@ class FriendListItem extends Component {
                             <small>Gender:</small>
                         </label>
                         <select
-                            className={styles.genderSelect}
-                            onChange={this.onGenderChangeHandler}
+                            className={classnames('js-genderSelector', styles.genderSelect)}
+                            onChange={this.onGenderChangeHandler.bind(this)}
                             value={gender}
                         >
                             <option value={GENDER_NONE}>--</option>
