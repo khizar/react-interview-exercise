@@ -1,0 +1,30 @@
+:local(.pagination) {
+    background-color: white;
+    border-bottom: 1px solid #E3E3E3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+:local(.pageNumber) {
+    font-weight: normal;
+    padding: 10px;
+    margin-bottom: 0;
+}
+
+:local(.arrow) {
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+:local(.arrow):hover {
+    text-decoration: none;
+}
+
+:local(.arrow.disabled) {
+    color: #a9a9a9;
+    cursor: default;
+}
+
+
