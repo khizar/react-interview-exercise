@@ -17,7 +17,16 @@ class FriendListItem extends Component {
                     <div><span>{this.props.name}</span></div>
                     <div>
                         <small>xx friends in common</small>
-                        <select onChange={this.onGenderChangeHandler} value={gender}>
+                    </div>
+                    <div className={styles.genderSelectWrapper}>
+                        <label className={styles.genderSelectLabel}>
+                            <small>Gender:</small>
+                        </label>
+                        <select
+                            className={styles.genderSelect}
+                            onChange={this.onGenderChangeHandler}
+                            value={gender}
+                        >
                             <option value={GENDER_NONE}>--</option>
                             <option value={GENDER_MALE}>Male</option>
                             <option value={GENDER_FEMALE}>Female</option>

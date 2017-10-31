@@ -26,3 +26,18 @@
 button:focus {
   outline: 0 !important;
 }
+
+:local(.genderSelectWrapper) {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px;
+}
+:local(.genderSelectLabel) {
+  font-weight: normal;
+  margin-bottom: 0;
+}
+:local(.genderSelect) {
+  margin-left: 10px;
+  height: 20px;
+}
