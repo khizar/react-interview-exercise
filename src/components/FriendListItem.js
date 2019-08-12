@@ -1,13 +1,11 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styles from './FriendListItem.css';
 import {GENDER_FEMALE, GENDER_MALE, GENDER_NONE} from "../constants/MiscelleneousConstants";
 
 class FriendListItem extends Component {
 
-    onGenderChangeHandler(event) {
-        this.props.setGender(this.props.id, event.target.value);
-    };
 
     render() {
         const {gender} = this.props;
@@ -24,7 +22,6 @@ class FriendListItem extends Component {
                         </label>
                         <select
                             className={classnames('js-genderSelector', styles.genderSelect)}
-                            onChange={this.onGenderChangeHandler.bind(this)}
                             value={gender}
                         >
                             <option value={GENDER_NONE}>--</option>

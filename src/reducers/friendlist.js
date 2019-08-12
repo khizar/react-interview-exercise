@@ -28,17 +28,6 @@ const initialState = {
 
 export default function friends(state = initialState, action) {
     switch (action.type) {
-        case types.ADD_FRIEND:
-            return {
-                ...state,
-                friendsById: [
-                    ...state.friendsById,
-                    {
-                        id: state.friendsById.length,
-                        name: action.name
-                    }
-                ],
-            };
         case types.DELETE_FRIEND:
             return {
                 ...state,
@@ -65,16 +54,6 @@ export default function friends(state = initialState, action) {
             return {
                 ...state,
                 currentPageNumber: action.pageNumber
-            };
-        case types.SET_GENDER:
-            return {
-                ...state,
-                friendsById: state.friendsById.map((friend) => {
-                    if (friend.id === action.id) {
-                        friend.gender = action.gender;
-                    }
-                    return friend;
-                })
             };
 
         default:

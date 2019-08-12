@@ -1,11 +1,6 @@
 import * as types from '../constants/ActionTypes';
 
-export function addFriend(name) {
-    return {
-        type: types.ADD_FRIEND,
-        name
-    };
-}
+export function addFriend() {}
 
 export function deleteFriend(id) {
     return {
@@ -36,10 +31,3 @@ export function goToPage(pageNumber) {
     }
 }
 
-export function setGender(id, gender) {
-    return {
-        type: types.SET_GENDER,
-        id,
-        gender
-    }
-}
