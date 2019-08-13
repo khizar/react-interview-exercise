@@ -7,15 +7,16 @@ const AddFriendInput = ({addFriend}) => {
   const [name, setName] = useState('');
   const handleChange = useCallback((e) => {
     setName(e.target.value);
-  }, []);
+  }, [name]);
 
   const handleSubmit = useCallback((e) => {
-    const name = e.target.value.trim();
+    const nameVal = e.target.value.trim();
     if (e.which === 13) {
-      addFriend(name);
+
+      addFriend(nameVal);
       setName('');
     }
-  },[]);
+  },[name]);
 
   return (
     <input
